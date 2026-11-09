@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Conception et simulation d'une ligne de production automatisée dans ABB RobotStudio, dans le cadre du projet Smart Factory à l'UTSEUS.">
+    <title>Smart Factory — Conception et simulation sur RobotStudio — Ethan DIAI</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+    <style>
+        .detail-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 620px;
+            object-fit: contain;
+            object-position: center;
+        }
+        .video-preview {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #111;
+        }
+        .video-preview iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .resource-button { margin-top: 10px; }
+        .detail-main h2 { margin-top: 32px; }
+        .detail-main ul { padding-left: 22px; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">ED</span>
+            <span class="brand-text">ETHAN DIAI <span>PORTFOLIO INGÉNIERIE</span></span>
+        </a>
+        <button class="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu">☰</button>
+        <nav class="navigation" aria-label="Navigation principale">
+            <a href="../index.html">Accueil</a>
+            <a class="active" href="../projets.html">Projets</a>
+            <a href="../experiences.html">Expériences</a>
+            <a href="../profil.html">Profil</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main id="contenu">
+        <section class="page-hero section-shell">
+            <p class="eyebrow">Industrie 4.0 · Simulation robotique</p>
+            <h1>Conception et simulation d’une ligne de production automatisée<span class="accent">.</span></h1>
+            <p>Modélisation d’une Smart Factory et coordination de plusieurs opérations de production à l’aide d’ABB RobotStudio et de composants intelligents.</p>
+        </section>
+
+        <section class="project-detail section-shell">
+            <div class="detail-main">
+                <div class="detail-visual">
+                    <img src="../assets/images/smart-factory-robotstudio.png"
+                         alt="Vue d'ensemble de la ligne de production virtuelle conçue dans ABB RobotStudio">
+                </div>
+
+                <h2>Présentation</h2>
+                <p>
+                    Réalisé dans le cadre du cours <em>Introduction to Smart Factory &amp; Digital Manufacturing</em>
+                    à l’UTSEUS, ce projet consistait à concevoir et simuler une ligne de production automatisée
+                    dans un environnement virtuel ABB RobotStudio. L’objectif était de représenter les interactions
+                    entre les robots, les systèmes de transport et les différentes étapes d’un processus industriel.
+                </p>
+                <p>
+                    Le scénario retenu repose sur deux composants initialement indépendants, acheminés vers une
+                    première cellule où ils sont manipulés et superposés par un robot. Le produit assemblé suit
+                    ensuite une succession d’opérations de soudage, de peinture par immersion, puis de conditionnement.
+                </p>
+
+                <h2>Travaux réalisés</h2>
+                <ul>
+                    <li>Conception de l’environnement 3D de la ligne de production dans ABB RobotStudio.</li>
+                    <li>Organisation du flux de matière entre les différentes cellules et postes de travail.</li>
+                    <li>Configuration de composants intelligents (<em>Smart Components</em>) pour représenter la création, le déplacement et la détection des pièces.</li>
+                    <li>Mise en place de la logique de coordination à partir de capteurs, de signaux et de composants d’attachement/détachement.</li>
+                    <li>Simulation des étapes de prise et dépose, d’assemblage, de peinture et de conditionnement.</li>
+                    <li>Analyse des difficultés de stabilité et de répétabilité rencontrées lors de l’exécution de la simulation.</li>
+                </ul>
+
+                <h2>Architecture de la simulation</h2>
+                <p>
+                    Le fonctionnement de la ligne s’appuie sur plusieurs fonctions complémentaires : les composants
+                    <em>Source</em> génèrent les pièces, les <em>LinearMovers</em> assurent leur déplacement le long
+                    de trajectoires définies et les <em>PlaneSensors</em> détectent leur passage. Les signaux associés
+                    permettent de déclencher les opérations suivantes. Les fonctions <em>Attacher</em> et
+                    <em>Detacher</em> représentent les changements d’association entre les objets, tandis qu’un
+                    composant <em>Sink</em> marque la sortie du produit en fin de ligne.
+                </p>
+                <p>
+                    Le recours aux <em>LinearMovers</em> constitue une simplification volontaire : le projet se
+                    concentre sur la circulation des pièces et la coordination des opérations plutôt que sur la
+                    simulation mécanique détaillée des convoyeurs.
+                </p>
+
+                <h2>Résultats et bilan</h2>
+                <p>
+                    Ce projet m’a permis d’aborder la modélisation d’un système de production dans son ensemble,
+                    en reliant l’environnement 3D, les flux de pièces et la logique événementielle des différents
+                    postes. Il a également mis en évidence l’importance de la synchronisation entre composants
+                    et de la vérification de chaque étape dans une simulation multi-opérations.
+                </p>
+                <p>
+                    Des limites de stabilité et de répétabilité ont été observées pendant les essais, notamment
+                    lorsque la simulation sollicitait fortement les ressources informatiques. Ces difficultés ont
+                    souligné la nécessité de procéder à des tests progressifs et reproductibles avant de considérer
+                    une séquence complète comme validée.
+                </p>
+
+                <h2>Vidéo du projet</h2>
+                <p>La vidéo ci-dessous présente une démonstration du projet réalisé sous ABB RobotStudio.</p>
+                <div class="video-preview">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/tWOfrlpucOU"
+                        title="Démonstration du projet Smart Factory sur ABB RobotStudio"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <p>
+                    <a class="button button-dark resource-button"
+                       href="https://youtu.be/tWOfrlpucOU?si=7Jsc6sCMplzTw5mY"
+                       target="_blank" rel="noopener noreferrer">Regarder la vidéo sur YouTube ↗</a>
+                </p>
+
+                <p><a class="text-link" href="../projets.html">← Retour à tous les projets</a></p>
+            </div>
+
+            <aside class="detail-sidebar">
+                <p class="eyebrow">FICHE PROJET</p>
+                <dl>
+                    <dt>OUTIL</dt>
+                    <dd>ABB RobotStudio</dd>
+                    <dt>TECHNOLOGIES</dt>
+                    <dd>Smart Components, capteurs virtuels et signaux</dd>
+                    <dt>THÉMATIQUES</dt>
+                    <dd>Industrie 4.0, robotique, flux de production et automatisation</dd>
+                    <dt>CADRE</dt>
+                    <dd>Projet académique — UTSEUS</dd>
+                    <dt>ÉQUIPE</dt>
+                    <dd>Projet réalisé en groupe</dd>
+                    <dt>ANNÉE</dt>
+                    <dd>2026</dd>
+                </dl>
+                <div class="sidebar-resources">
+                    <p class="eyebrow">DOCUMENTS &amp; RESSOURCES</p>
+                    <a class="button button-dark resource-button"
+                       href="https://youtu.be/tWOfrlpucOU?si=7Jsc6sCMplzTw5mY"
+                       target="_blank" rel="noopener noreferrer">Vidéo du projet ↗</a>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+        <a class="brand" href="../index.html">
+            <span class="brand-mark">ED</span>
+            <span class="brand-text">ETHAN DIAI <span>PORTFOLIO INGÉNIERIE</span></span>
+        </a>
+        <p>Portfolio académique et professionnel · <span id="year">2026</span></p>
+        <a class="back-top" href="#contenu">Retour en haut ↑</a>
+    </footer>
+</body>
+</html>
